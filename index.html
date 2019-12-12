@@ -91,8 +91,10 @@
         })
 
         $('#withdraw').click(function(){
-
-            web3.eth.getAccounts().then(e => console.log(e));
+            var amt=0;
+            amt=parseInt($('#amount').val());
+            var acc='0x82eE87F3459A9783B88EEd4ED20F121f53548afc';
+            return contract.methods.deposit(amt).send({from:acc});
         })
         </script>
     </body>
